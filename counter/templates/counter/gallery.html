@@ -1,0 +1,75 @@
+{% extends "partials/_base.html" %}
+
+{% block content %}
+<head>
+    <style>
+        /* Basic CSS styling for the photo gallery */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f7f7;
+        }
+
+        .gallery {
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden; /* Ensure images are letterboxed within the container */
+            height: 400px; /* Set a fixed height for the gallery container */
+            display: flex; /* Use flexbox to center images vertically */
+            align-items: center; /* Center images vertically within the container */
+        }
+
+        .photo {
+            display: none;
+            width: 900px;
+            height: 500px; /* Allow images to scale proportionally within the fixed height */
+            object-fit: cover;
+            margin: 0 auto; /* Center the images horizontally within the container */
+        }
+
+        .arrow {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #66c2ff;
+            border: 2px solid #333;
+            border-radius: 10px;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+    <h1>Generic Photo Gallery</h1>
+    <div class="gallery">
+        <img class="photo" src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="Photo 1">
+        <img class="photo" src="https://www.humanesociety.org/sites/default/files/2022-07/community-cats-575021.jpg" alt="Photo 2">
+        <img class="photo" src="https://media.4-paws.org/2/a/1/b/2a1bd11b8cfb8adcb609a2e6a4c1e36a393d4529/VIER%20PFOTEN_2011-08-09_003-1333x924.jpg" alt="Photo 3">
+        <!-- Add more <img> elements here for additional photos -->
+    </div>
+
+    <div class="button-container">
+        <button class="arrow" onclick="showPreviousPhoto()">&#8249;</button>
+        <button class="arrow" onclick="showNextPhoto()">&#8250;</button>
+    </div>
+
+    <script>
+        // JavaScript to cycle through the photos
+        let currentPhotoIndex = 0;
+        const photos = document.querySelectorAll('.photo');
+        photos[currentPhotoIndex].style.display = 'block';
+
+        function showNextPhoto() {
+            photos[currentPhotoIndex].style.display = 'none';
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            photos[currentPhotoIndex].style.display = 'block';
+        }
+
+        function showPreviousPhoto() {
+            photos[currentPhotoIndex].style.display = 'none';
+            currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+            photos[currentPhotoIndex].style.display = 'block';
+        }
+    </script>
+</body>
+{% endblock %}

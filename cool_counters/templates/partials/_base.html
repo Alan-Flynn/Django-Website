@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Django Website{% endblock %}</title>
+    <!-- Include your CSS stylesheets here -->
+    <link rel="stylesheet" href="path/to/your/styles.css">
+</head>
+<body>
+    <div class="header">
+        <div>
+            <img src="https://www.djangoproject.com/m/img/logos/django-logo-positive.png" alt="Django Website">
+            <h1>Django Website</h1>
+        </div>
+        <div class="visit-info">
+            The website has been visited: {{ value }} times
+        </div>
+    </div>
+
+    <div class="navigation">
+        <!-- Your navigation links or menu here -->
+        <a href="/contact">Contact Us</a>
+        <a href="/gallery">Gallery</a>
+    </div>
+
+    <div class="content">
+        <!-- This is a block that child templates will fill with their content -->
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <div class="footer">
+        <!-- Your footer content here -->
+        &copy; 2023 Django Website. All rights reserved.
+    </div>
+
+    <!-- Include your JavaScript files here -->
+    <script src="path/to/your/scripts.js"></script>
+</body>
+</html>

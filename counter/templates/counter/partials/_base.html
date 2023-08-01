@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .header img {
+            max-width: 100px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .visit-info {
+            background-color: #66c2ff;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            color: #333;
+            margin-top: 40px;
+        }
+
+        .options {
+            background-color: #66c2ff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            border-left: 50px solid transparent; /* Add transparent border on the left side */
+            border-right: 50px solid transparent; /* Add transparent border on the right side */
+        }
+
+        .option {
+            display: inline-block;
+            font-size: 20px;
+            padding: 5px 15px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .option:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <img src="https://www.djangoproject.com/m/img/logos/django-logo-positive.png" alt="Django Website">
+            <h1>Django Website</h1>
+        </div>
+        <div class="visit-info">
+            The website has been visited: {{ value }} times
+        </div>
+    </div>
+
+    <div class="options">
+        <a href="/contact" class="option">Contact Us</a>
+        <a href="/gallery" class="option">Gallery</a>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

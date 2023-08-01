@@ -1,0 +1,74 @@
+{% extends "partials/_base.html" %}
+
+{% block content %}
+<html>
+<head>
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .contact-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-heading {
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .contact-info span {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .contact-email {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-email:hover {
+            text-decoration: underline;
+        }
+
+        .contact-phone {
+            color: #28a745;
+        }
+
+        .contact-address {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <h2 class="contact-heading">Contact Us</h2>
+        <div class="contact-info">
+            <span>Email:</span> <a href="mailto:contact@example.com" class="contact-email">contact@example.com</a>
+        </div>
+        <div class="contact-info">
+            <span>Phone:</span> <span class="contact-phone">+1 (555) 123-4567</span>
+        </div>
+        <div class="contact-info">
+            <span>Address:</span> <span class="contact-address">123 Main Street, City, Country</span>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
+
